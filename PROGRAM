@@ -1,0 +1,40 @@
+!/bin/avr/emr python 
+
+import os
+
+os.system('apt - get install figlet') 
+os.system('clear')
+os.system('figlet TR-HACK')
+
+
+print ('''
+TR:
+Merhaba Bu Tool TURKIYE'DE Olan DARKHACKTEAM Tarafindan Yazılmistir
+1 NORMAL PORT TARAMA
+2 SERVİS VE VERSİYON TARAMA
+3 ISLETIM SISTEMI TARAMA
+(YAZILAR INGILIZCE OLACAKTIR!)
+--------------------------------------------------------------------
+ENG:                                                            
+Hi, I'm With This Tool is written by DARKHACKTEAM IN TURKEY     
+1 NORMAL PORT SCAN
+2 SERVICE AND VERSION SCAN
+3 SCANNING THE OPERATING SYSTEM
+
+''')
+operationno = input('enter transaction number')
+
+if(operationno=='1'):
+         hedefip = input ('enter target ip')
+         os.system('nmap' + hedefip) 
+
+elif(operationno=='2'):
+         hedefip = input ('enter target ip')
+         os.system('nmap -sS -sV '+hedefip)
+
+elif(operationno=='3'):
+         hedefip = input ('enter target ip')
+         os.system('nmap -0 -sV '+ hedefip)
+else:
+         print('There is no such option, please try again.' )
+
