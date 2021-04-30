@@ -13,6 +13,7 @@ Merhaba Bu Tool TURKIYE'DE Olan DARKHACKTEAM Tarafindan Yazılmistir
 1 NORMAL PORT TARAMA
 2 SERVİS VE VERSİYON TARAMA
 3 ISLETIM SISTEMI TARAMA
+4 SQL ACIK TARAMA
 (YAZILAR INGILIZCE OLACAKTIR!)
 --------------------------------------------------------------------
 ENG:                                                            
@@ -20,6 +21,7 @@ Hi, I'm With This Tool is written by DARKHACKTEAM IN TURKEY
 1 NORMAL PORT SCAN
 2 SERVICE AND VERSION SCAN
 3 SCANNING THE OPERATING SYSTEM
+4 SQL SCAN
 
 ''')
 operationno = input('enter transaction number')
@@ -35,5 +37,9 @@ elif(operationno=='2'):
 elif(operationno=='3'):
          hedefip = input ('enter target ip')
          os.system('nmap -0 -sV '+ hedefip)
+elif(operationno=='4'):
+         hedefip = input ('enter target ip')
+          os.system('nmap -p80 --script http-sql-injection '+hedefip')
+          
 else:
          print('There is no such option, please try again.' )
